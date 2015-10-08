@@ -365,9 +365,7 @@ String appId=BusinessDelegator.getNextAppointmentId();
 //db.initialLoad("LAMS");
 
 
-
 HashMap testMap=p_Appointment.getTestDetails();
-
         //extra steps here due to persistence api and join, need to create objects in list
 
         List<AppointmentLabTest> tests = new ArrayList<AppointmentLabTest>();
@@ -386,15 +384,12 @@ if(testMap!=null)
         tests.add(test);
                 }
         dbAppointment.setAppointmentLabTestCollection(tests);
-}
-        
+}      
         dbAppointment.setPatientid((components.data.Patient)BusinessDelegator.db.getData("Patient","id='"+p_Appointment.getPatientId()+"'").get(0));
         dbAppointment.setPhlebid((components.data.Phlebotomist)BusinessDelegator.db.getData("Phlebotomist","id='"+p_Appointment.getPhlebotomistId()+"'").get(0));
-
         String sql ="select * from PSC where id='"+p_Appointment.getPatientId()+"'";
             
        dbAppointment.setPscid(BusinessDelegator.getDBPSC(p_Appointment.getPatientServiceCenterCode()));
-
         boolean good = BusinessDelegator.db.addData(dbAppointment);
 if(good)
 {
@@ -437,7 +432,6 @@ if(rs!=null)
 
             for (Iterator it=row.keySet().iterator(); it.hasNext(); )
             {
-
                 String colName = (String)it.next();
                 String value = row.get(colName);
                 if(colName.equals("NAME"))

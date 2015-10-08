@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/emartinescu/rit/junitexercise/derby.log</file>
-            <file>file:/Users/emartinescu/rit/junitexercise/src/com/compdev/dbutil/TestDB.java</file>
-            <file>file:/Users/emartinescu/rit/junitexercise/manifest.mf</file>
+            <file>file:/C:/Users/ARabidNun/Desktop/ISTE%20422/iste422-junit/src/com/compdev/vo/Appointment.java</file>
+            <file>file:/C:/Users/ARabidNun/Desktop/ISTE%20422/iste422-junit/src/com/compdev/dbutil/BusinessDelegator.java</file>
+            <file>file:/C:/Users/ARabidNun/Desktop/ISTE%20422/iste422-junit/src/com/compdev/vo/Physician.java</file>
+            <file>file:/C:/Users/ARabidNun/Desktop/ISTE%20422/iste422-junit/test/com/compdev/vo/AppointmentTest.java</file>
+            <file>file:/C:/Users/ARabidNun/Desktop/ISTE%20422/iste422-junit/src/com/compdev/util/Validate.java</file>
         </group>
     </open-files>
 </project-private>
