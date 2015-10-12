@@ -371,25 +371,27 @@ HashMap testMap=p_Appointment.getTestDetails();
         List<AppointmentLabTest> tests = new ArrayList<AppointmentLabTest>();
 if(testMap!=null)
 {
+    
         for (Iterator it=testMap.keySet().iterator(); it.hasNext(); )
                 {
                     String colName = (String)it.next();
                 String value = (String) testMap.get(colName);
-
+                
                 AppointmentLabTest test = new AppointmentLabTest(appId,colName,value);
-
+                System.out.println("Test2");
 
         test.setDiagnosis((components.data.Diagnosis)BusinessDelegator.db.getData("Diagnosis", "code='"+value+"'").get(0));
         test.setLabTest((components.data.LabTest)BusinessDelegator.db.getData("LabTest","id='"+colName+"'").get(0));
         tests.add(test);
                 }
+        
+        System.out.println("After Test");
         dbAppointment.setAppointmentLabTestCollection(tests);
 }      
         dbAppointment.setPatientid((components.data.Patient)BusinessDelegator.db.getData("Patient","id='"+p_Appointment.getPatientId()+"'").get(0));
         dbAppointment.setPhlebid((components.data.Phlebotomist)BusinessDelegator.db.getData("Phlebotomist","id='"+p_Appointment.getPhlebotomistId()+"'").get(0));
         String sql ="select * from PSC where id='"+p_Appointment.getPatientId()+"'";
-            
-       dbAppointment.setPscid(BusinessDelegator.getDBPSC(p_Appointment.getPatientServiceCenterCode()));
+        dbAppointment.setPscid(BusinessDelegator.getDBPSC(p_Appointment.getPatientServiceCenterCode()));
         boolean good = BusinessDelegator.db.addData(dbAppointment);
 if(good)
 {
@@ -434,6 +436,8 @@ if(rs!=null)
             {
                 String colName = (String)it.next();
                 String value = row.get(colName);
+                System.out.println("colName=" + colName);
+                System.out.println("value=" + value);
                 if(colName.equals("NAME"))
                 {
                  psc=new components.data.PSC();
